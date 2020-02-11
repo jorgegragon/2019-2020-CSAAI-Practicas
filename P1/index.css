@@ -1,0 +1,29 @@
+/* Ejemplo de hoja de estilo */
+
+/* Estilo para el cuerpo del HTML */
+body {
+  background-color: #ffa938;
+}
+
+/* Estilo para las etiquetas de tipo h1 */
+.Encabezados {
+  color: black;
+  background-color: #d67a00;
+  text-align: center;
+}
+
+.Primera_zona {
+  float: left;
+}
+
+.Segunda_zona {
+  overflow: auto;
+}
+
+.Informacion_relevante {
+   margin-left: 10px;
+}
+
+.Descripciones {
+   margin-left: 30px;
+}
