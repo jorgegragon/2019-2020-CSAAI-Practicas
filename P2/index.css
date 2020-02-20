@@ -1,0 +1,26 @@
+body {
+  background-color: #ffa938;
+}
+
+/* Estilo para las etiquetas */
+#resultado{
+  background-color: white;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 200px;
+}
+.teclas {
+  color: black;
+  background-color: #d67a00;
+  text-align: center;
+  border-radius: 10px;
+}
+.teclas_numericas{
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  text-align: center;
+}
