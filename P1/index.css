@@ -2,6 +2,7 @@
 
 /* Estilo para el cuerpo del HTML */
 body {
+  background-image: url("alpiste.jpg");
   background-color: #ffa938;
 }
 
@@ -10,10 +11,20 @@ body {
   color: black;
   background-color: #d67a00;
   text-align: center;
+  border-style: solid;
 }
 
 .Primera_zona {
   float: left;
+}
+
+.logos {
+  margin-top: 30px;
+  width: 100px;
+}
+
+.minilogos {
+  width: 15px;
 }
 
 .Segunda_zona {
