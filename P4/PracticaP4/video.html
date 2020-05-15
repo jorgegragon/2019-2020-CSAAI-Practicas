@@ -2,15 +2,36 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>VIDEO 01</title>
+    <title>P4 Jorge Grande</title>
     <script src="video.js" defer></script>
     <link rel="stylesheet" href="video.css">
   </head>
   <body>
-    <p>Prueba de vídeo</p>
-    <video loop id="video1"></video>
+    <video id="pantalla_general" autoplay  muted loop >
+        <source id="pantalla"/>
+    </video>
     <br>
-    <button id="play">Ver!</button>
-    <button id="stop">Parar</button>
+    <div class="videos">
+      <video id="video1" autoplay  muted loop
+        src="http://content.bitsontherun.com/videos/bkaovAYt-52qL9xLP.mp4">
+      </video>
+
+      <video id="video2" autoplay  muted loop
+        src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente2.mp4"/>
+      </video>
+
+      <video id="video3" autoplay  muted loop
+        src="https://gsyc.urjc.es/jmplaza/csaai/realizador-fuente3.mp4"/>
+      </video>
+    </div>
+    <br>
+    <div class="boton">
+      <button type="button" id="boton1">CÁMARA 1</button>
+      <button type="button" id="boton2">CÁMARA 2</button>
+      <button type="button" id="boton3">CÁMARA 3</button>
+    </div>
+    <br>
+    <br>
+      <button type="button" id="automatico">Modo automático</button>
   </body>
 </html>

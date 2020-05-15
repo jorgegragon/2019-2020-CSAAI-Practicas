@@ -1,0 +1,40 @@
+body{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: auto;
+  background-color: orange;
+}
+
+#video1, #video2, #video3{
+  margin: auto;
+  padding-bottom: 10px;
+  width:150px;
+  height: 100px;
+  background-color: black;
+  border-radius: 20px;
+  border: 4px solid black;
+}
+
+#pantalla_general{
+  width:480px;
+  height: 300px;
+  background-color: black;
+  margin-bottom: 50px;
+}
+
+#boton1, #boton2, #boton3{
+  background-color: #96C0CB;
+  border-radius: 10px;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  width: 160px;
+  height: 30px;
+}
+
+#boton1:active {
+  background-color:#658C97;
+}
