@@ -5,7 +5,7 @@ body{
   background-color: orange;
 }
 
-#video1, #video2, #video3{
+#video1, #video2, #video3, #imagenfija{
   margin: auto;
   padding-bottom: 10px;
   width:150px;
@@ -20,9 +20,10 @@ body{
   height: 300px;
   background-color: black;
   margin-bottom: 50px;
+  margin-left: 90px;
 }
 
-#boton1, #boton2, #boton3{
+#boton1, #boton2, #boton3, #boton4{
   background-color: #96C0CB;
   border-radius: 10px;
   color: black;
@@ -31,7 +32,7 @@ body{
   cursor: pointer;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
-  width: 160px;
+  width: 159px;
   height: 30px;
 }
 
