@@ -1,0 +1,9 @@
+body {
+  background-color: grey;
+}
+
+.general{
+  column-count: 2;
+  text-align: center;
+  display: inline-block;
+}
