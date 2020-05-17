@@ -9,10 +9,14 @@
   <body>
     <div class="general">
       <p>Imagen original</p>
-      <img src="lenna.jpg" id="imagesrc">
-      <p>Imagen manipulada</p>
-      <canvas id="canvas"></canvas>
+      <img src="GOT.png" id="imagesrc">
+      <div class="tratamiento">
+        <p>Imagen manipulada</p>
+        <canvas id="canvas"></canvas>
+      </div>
     </div>
+
+    <div class="umbrales">
       <p>Establece el umbral de rojo:</p>
       <input type="range" id="deslizadorR" min="0" max="255" value="255"/>
       <p id="range_valueR">255</p>
@@ -24,6 +28,10 @@
       <p>Establece el umbral de azul:</p>
       <input type="range" id="deslizadorB" min="0" max="255" value="255"/>
       <p id="range_valueB">255</p>
+    </div>
 
+    <button type="button" name="grey" id="grises">Escala de grises</button>
+    <button type="button" name="original" id="originals">Imagen original</button>
+    <button type="button" name="rotaciones" id="rotation">Rotar imagen</button>
   </body>
 </html>

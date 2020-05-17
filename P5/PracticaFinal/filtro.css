@@ -2,8 +2,37 @@ body {
   background-color: grey;
 }
 
-.general{
-  column-count: 2;
-  text-align: center;
-  display: inline-block;
+.umbrales{
+  position: absolute;
+  top: 70px; left: 700px;
+}
+
+#range_valueR{
+  position: absolute;
+  left: 150px;
+  top: 35px;
+}
+
+#range_valueG{
+  position: absolute;
+  left: 150px;
+  top: 112px;
+}
+
+#range_valueB{
+  position: absolute;
+  left: 150px;
+  top: 189px;
+}
+
+#grises{
+  position: absolute;
+  top: 400px;
+  left: 700px;
+}
+
+#originals{
+  position: absolute;
+  top: 400px;
+  left: 900px;
 }

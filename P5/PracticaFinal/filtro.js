@@ -15,6 +15,10 @@ const range_valueR = document.getElementById('range_valueR');
 const range_valueG = document.getElementById('range_valueG');
 const range_valueB = document.getElementById('range_valueB');
 
+const grises = document.getElementById('grises');
+const originals = document.getElementById('originals');
+const rotation = document.getElementById('rotation');
+
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
 //-- lleva un tiempo. Sólo podemos acceder a ella una vez
@@ -70,6 +74,29 @@ function cromatica(){
   ctx.putImageData(imgData, 0, 0);
 }
 
+function gray() {
+
+    var imgW = img.width;
+    var imgH = img.height;
+    canvas.width = imgW;
+    canvas.height = imgH;
+
+    ctx.drawImage(img, 0, 0);
+    var imgPixels = ctx.getImageData(0, 0, imgW, imgH);
+
+    for(var y = 0; y < imgPixels.height; y++){
+        for(var x = 0; x < imgPixels.width; x++){
+            var i = (y * 4) * imgPixels.width + x * 4;
+            var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3;
+            imgPixels.data[i] = avg;
+            imgPixels.data[i + 1] = avg;
+            imgPixels.data[i + 2] = avg;
+        }
+    }
+    ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+    return canvas.toDataURL();
+}
+
   //Deslizadores
   deslizadorR.oninput = () => {
     cromatica();
@@ -82,5 +109,20 @@ function cromatica(){
   deslizadorB.oninput = () => {
     cromatica();
   }
+
+  grises.onclick = () => {
+    console.log("Escala grises");
+    gray();
+  };
+
+  originals.onclick = () => {
+    console.log("Original");
+    img.onload();
+  };
+
+  rotation.onclick = () => {
+    console.log("Rotacion");
+    ctx.rotate(180);
+  };
 
 console.log("Fin...");
