@@ -4,7 +4,17 @@ body {
 
 .umbrales{
   position: absolute;
-  top: 70px; left: 700px;
+  top: 120px; left: 700px;
+}
+
+#compania{
+  position: absolute;
+  top: 50px; left: 700px;
+}
+
+#mech1_anime{
+  position: absolute;
+  top: 90px; left: 700px;
 }
 
 #range_valueR{

@@ -2,7 +2,7 @@ console.log("Ejecutando JS....")
 
 //-- Obtener elementos del DOM
 const canvas = document.getElementById('canvas');
-const img = document.getElementById('imagesrc');
+var img = document.getElementById('imagesrc');
 const ctx = canvas.getContext('2d');
 
 //-- Acceso al deslizador
@@ -19,6 +19,8 @@ const grises = document.getElementById('grises');
 const originals = document.getElementById('originals');
 const color_sepia = document.getElementById('color_sepia');
 const color_invertido = document.getElementById('color_invertido');
+
+var decision = document.getElementById('mech1_anime');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -170,5 +172,23 @@ function negativo() {
     console.log("Color invertido");
     negativo();
   };
+
+  decision.onchange = () => {
+    var selector = document.getElementById('mech1_anime').value;
+
+    if (selector == "medio") {
+      document.getElementById("imagesrc").src = "imagenes/loros.bmp";
+      console.log("loros");
+      img.onload();
+    }else if (selector == "dificil") {
+      document.getElementById("imagesrc").src = "imagenes/lenna.jpg";
+      img.onload();
+    }else {
+      document.getElementById("imagesrc").src = "imagenes/GOT.png";
+      console.log("GOT");
+      img.onload();
+    }
+    console.log(selector);
+}
 
 console.log("Fin...");
