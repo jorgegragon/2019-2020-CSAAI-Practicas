@@ -177,11 +177,11 @@ function negativo() {
     var selector = document.getElementById('mech1_anime').value;
 
     if (selector == "medio") {
-      document.getElementById("imagesrc").src = "imagenes/loros.bmp";
+      document.getElementById("imagesrc").src = "imagenes/loros.png";
       console.log("loros");
       img.onload();
     }else if (selector == "dificil") {
-      document.getElementById("imagesrc").src = "imagenes/lenna.jpg";
+      document.getElementById("imagesrc").src = "imagenes/cruceros.png";
       img.onload();
     }else {
       document.getElementById("imagesrc").src = "imagenes/GOT.png";
