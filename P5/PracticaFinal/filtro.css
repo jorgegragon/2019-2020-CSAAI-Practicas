@@ -34,5 +34,17 @@ body {
 #originals{
   position: absolute;
   top: 400px;
-  left: 900px;
+  left: 850px;
+}
+
+#color_sepia{
+  position: absolute;
+  top: 450px;
+  left: 700px;
+}
+
+#color_invertido{
+  position: absolute;
+  top: 450px;
+  left: 850px;
 }

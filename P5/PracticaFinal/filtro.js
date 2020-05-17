@@ -17,7 +17,8 @@ const range_valueB = document.getElementById('range_valueB');
 
 const grises = document.getElementById('grises');
 const originals = document.getElementById('originals');
-const rotation = document.getElementById('rotation');
+const color_sepia = document.getElementById('color_sepia');
+const color_invertido = document.getElementById('color_invertido');
 
 //-- Función de retrollamada de imagen cargada
 //-- La imagen no se carga instantaneamente, sino que
@@ -97,6 +98,46 @@ function gray() {
     return canvas.toDataURL();
 }
 
+function sepia() {
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        pixels = imageData.data,
+        numPixels = imageData.width * imageData.height;
+
+    for ( var i = 0; i < numPixels; i++ ) {
+        var r = pixels[ i * 4 ];
+        var g = pixels[ i * 4 + 1 ];
+        var b = pixels[ i * 4 + 2 ];
+
+        pixels[ i * 4 ] = 255 - r;
+        pixels[ i * 4 + 1 ] = 255 - g;
+        pixels[ i * 4 + 2 ] = 255 - b;
+
+        pixels[ i * 4 ] = ( r * .393 ) + ( g *.769 ) + ( b * .189 );
+        pixels[ i * 4 + 1 ] = ( r * .349 ) + ( g *.686 ) + ( b * .168 );
+        pixels[ i * 4 + 2 ] = ( r * .272 ) + ( g *.534 ) + ( b * .131 );
+    }
+
+    ctx.putImageData( imageData, 0, 0 );
+};
+
+function negativo() {
+    var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        pixels = imageData.data,
+        numPixels = imageData.width * imageData.height;
+
+    for ( var i = 0; i < numPixels; i++ ) {
+        var r = pixels[ i * 4 ];
+        var g = pixels[ i * 4 + 1 ];
+        var b = pixels[ i * 4 + 2 ];
+
+        pixels[ i * 4 ] = 255 - r;
+        pixels[ i * 4 + 1 ] = 255 - g;
+        pixels[ i * 4 + 2 ] = 255 - b;
+    }
+
+    ctx.putImageData( imageData, 0, 0 );
+};
+
   //Deslizadores
   deslizadorR.oninput = () => {
     cromatica();
@@ -120,9 +161,14 @@ function gray() {
     img.onload();
   };
 
-  rotation.onclick = () => {
-    console.log("Rotacion");
-    ctx.rotate(180);
+  color_sepia.onclick = () => {
+    console.log("Color sepia");
+    sepia();
+  };
+
+  color_invertido.onclick = () => {
+    console.log("Color invertido");
+    negativo();
   };
 
 console.log("Fin...");
