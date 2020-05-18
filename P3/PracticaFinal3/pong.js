@@ -11,10 +11,16 @@ var singleplayer = true;
 //-- HTML. Las imprimimos en la consola
 console.log(`canvas: Anchura: ${canvas.width}, Altura: ${canvas.height}`);
 
+//-- Obtener Sonidos
+const sonido_raqueta = new Audio("sonido/pong-raqueta.mp3");
+const sonido_rebote = new Audio("sonido/pong-rebote.mp3");
+const sonido_tanto = new Audio("sonido/pong-tanto.mp3");
+
 //-- Obtener el contexto para pintar en el canvas
 const ctx = canvas.getContext("2d");
 var marcadorD = 0;
 var marcadorI = 0;
+var count = 0;
 //-- Pintar todos los objetos en el canvas
 function draw() {
   //----- Dibujar la Bola
@@ -57,7 +63,11 @@ function animacion() {
     raqD.update();
 
     if (singleplayer) {
-      raqD.y = bola.y;
+      if (count >= 10) {
+        raqD.y = bola.y - 50;
+      }else {
+        raqD.y = bola.y;
+      }
     }
 
     //-- Comprobar si la bola ha alcanzado el límite derecho
@@ -71,6 +81,8 @@ function animacion() {
       //-- Darle velocidad
       bola.vx = bola.vx_ini;
       bola.vy = 0;
+      count = 0;
+      sonido_tanto.play();
     }
     if (bola.x <= 0) {
       //-- Hay colisión. Cambiar el signo de la bola
@@ -80,6 +92,7 @@ function animacion() {
       //-- Darle velocidad
       bola.vx = -(bola.vx_ini);
       bola.vy = 0;
+      sonido_tanto.play();
     }
 
     if (marcadorD == 5) {
@@ -105,10 +118,13 @@ function animacion() {
         bola.y >= raqD.y && bola.y <=(raqD.y + raqD.height)) {
           bola.vx = (bola.vx * -1);
           bola.vy = (getRandomArbitrary(-3, 3) * -1);
+          count += 1;
+          sonido_raqueta.play();
     }
 
     if (bola.y >= canvas.height || bola.y <= 0) {
           bola.vy = (bola.vy * -1);
+          sonido_rebote.play();
     }
 
     //-- Actualizar coordenada x de la bola, en funcion de
